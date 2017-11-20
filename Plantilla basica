@@ -1,0 +1,15 @@
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#username admin privilege 15 secret admin
+Router(config)#line console 0
+Router(config-line)#login local
+Router(config-line)#exec-timeout 3 3
+Router(config-line)#line vty 0 4
+Router(config-line)#login local
+Router(config-line)#exec-timeout 3 3
+Router(config-line)#line vty 5 15
+Router(config-line)#login local
+Router(config-line)#exec-timeout 3 3
+Router(config-line)#exit
+Router(config)#banner motd #ACCESO SOLO A PERSONAL AUTORIZADO#
+Router(config)#no ip domain-lookup
